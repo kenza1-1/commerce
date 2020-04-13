@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+
+            Product:
+                class: App\Entity\Product
+                list:
+                  max_results: 6
+                  title: " List of %%entity_label%%"
+                  actions:
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-info'}
+                    - {name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+                  
+                  fields:
+                    - {property: 'title'}
+                    - {property: 'online', type: 'toggle'}
+                    - { property: 'picture', type: 'image' }
+                    - {property: 'description'}
+                    - {property: 'price'}
+                    - { property: 'category' }
+
+                  disabled_actions: ['show']
