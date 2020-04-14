@@ -8,3 +8,4 @@ easy_admin:
               children:
                   - {entity: 'Product', icon: 'tshirt', label: 'Products',css_class: 'font-weight-bold'}
                   - {entity: 'Category', icon: 'inbox', label: 'Categories',css_class: ' font-weight-bold '}
+                  - {entity: 'User', icon: 'users', label: 'User',css_class: ' font-weight-bold '}

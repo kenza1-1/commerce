@@ -14,8 +14,15 @@ easy_admin:
                     - {property: 'title'}
                     - {property: 'online', type: 'toggle'}
                     - { property: 'picture', type: 'image' }
-                    - {property: 'description'}
+                    - {property: 'description',type: 'raw'}
                     - {property: 'price'}
                     - { property: 'category' }
 
-                  disabled_actions: ['show']
+                # show:
+                #   fields:
+                #     - {property: 'title'}
+                #     - {property: 'online', type: 'toggle'}
+                #     - { property: 'picture', type: 'image',base_path: '%%uploads_path%%' }
+                #     - {property: 'description',type: 'raw'}
+                #     - {property: 'price'}
+                #     - { property: 'category' }
