@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SecurityController!{% endblock %}
+{% block title %}Inscription{% endblock %}
 
 {% block body %}
-<div class='mt-5 pt-5 container'>
+{# <div class='mt-5 pt-5 container'>
 {{ form_start(form) }}
 {{ form_row(form.username,{'label':'Nom d\'utilisateur', 'attr':{'placeholder': 'Votre nom' }})}}
 {{ form_row(form.email,{'label':'Email','attr': {'placeholder' : 'Votre email'}})}}
@@ -11,5 +11,45 @@
 {{ form_row(form.confirmPassword,{'label':'Confirmation du mot de passe de passe','attr': {'placeholder' : 'Confirmez votre mot de passe'}})}}
 <button type="submit" class="btn btn-success">S'inscrire</button>
 {{ form_end(form)}}
-</div>
+</div> #}
+<div class="page-wrapper bg-red p-t-180 p-b-100 font-robo">
+        <div class="wrapper wrapper--w960">
+            <div class="card card-2">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Inscription</h2>
+                    {{ form_start(form) }}
+                    <form method="POST">
+                        {# <div class="input-group "> #}
+                            {{ form_row(form.username,{'label':'Nom', 'attr':{'placeholder': 'Votre nom' }})}}
+                            {# <input class="input--style-2" type="text" placeholder="Name" name="name"> #}
+                        {# </div> #}
+                        {# <div class="input-group"> #}
+                            {# <input class="input--style-2" type="text" placeholder="Name" name="name"> #}
+                            {{ form_row(form.email,{'label':'Email','attr': {'placeholder' : 'Votre email'}})}}
+
+                        {# </div> #}
+                        {# <div class="input-group"> #}
+                            {# <input class="input--style-2" type="text" placeholder="Name" name="name"> #}
+                            {{ form_row(form.password,{'label':'Mot de passe','attr': {'placeholder' : 'Votre mot de passe'}})}}
+
+                        {# </div> #}
+                        {# <div class="input-group"> #}
+                            {# <input class="input--style-2" type="text" placeholder="Name" name="name"> #}
+                            {{ form_row(form.confirmPassword,{'label':'Confirmation','attr': {'placeholder' : 'Confirmez votre mot de passe'}})}}
+
+                        {# </div> #}
+        
+                        <div class="p-t-30  ">
+                            <button class="btn btn--radius btn--green" type="submit">S'inscrire</button>
+                            {# <button type="submit" class="btn btn-success">S'inscrire</button> #}
+                        {{ form_end(form)}}
+                        </div>
+                         <p class="text-center mt-4">Vous avez un déja un compte ? <a href="{{path ('security_login')}}">Se connecter</a> </p> 
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

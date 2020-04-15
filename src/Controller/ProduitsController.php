@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProduitsController extends AbstractController
 {
     /**
-     * @Route("/products", name="produits")
+     * @Route("/produits", name="produits")
      */
     public function index(ProductRepository $repo)
     {
