@@ -14,3 +14,4 @@ easy_admin:
                    - {property: 'username'}
                    - {property: 'email'}
                    - {property: 'password'}
+                   - {property: 'activation_token'}

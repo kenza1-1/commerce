@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProduitsController extends AbstractController
 {
     /**
-     * @Route("/produits", name="produits")
+     * @Route("/", name="produits")
      */
     public function index(ProductRepository $repo)
     {
@@ -22,7 +22,7 @@ class ProduitsController extends AbstractController
         ]);
     }
      /**
-     * @Route("/Products/{id}", name="products_show")  //dans une route qui est /quelque chose(ceqlq chose c'est un identifiant)
+     * @Route("/Produit/{id}", name="products_show")  //dans une route qui est /quelque chose(ceqlq chose c'est un identifiant)
      */
     // public function show(ProductRepository $repo,$id) Pour récuperer cet identifinat 
     public function show(ProductRepository $repo, $id) //Product $product

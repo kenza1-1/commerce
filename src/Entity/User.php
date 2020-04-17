@@ -30,6 +30,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Regex("/^\w+/")
      */
     public $username;
 
@@ -49,6 +50,11 @@ class User implements UserInterface
     * @Assert\EqualTo(propertyPath="password",message="les mots de passe ne correspondent pas.Veuiller réessayer")
     */
     public $confirmPassword;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $activation_token;
 
 
     public function getId(): ?int
@@ -96,6 +102,18 @@ class User implements UserInterface
     public function getSalt(){ }
     public function getRoles(){
         return ['Roles_USER'];
+    }
+
+    public function getActivationToken(): ?string
+    {
+        return $this->activation_token;
+    }
+
+    public function setActivationToken(?string $activation_token): self
+    {
+        $this->activation_token = $activation_token;
+
+        return $this;
     }
 
 }

@@ -36,11 +36,18 @@
                     <li class="nav-item nav-effect active pl-5">
                         <a class="nav-link " href="{{path ('security_logout')}}">Se déconnecter</a>
                     </li>
-                    {% endif %}
-                    
+                    <li>
+                     {% endif %}
+                     {% for message in app.flashes('notice') %}
+                        <div class="alert alert-success" id="msg">
+                            {{ message }}
+                        </div>  
+                     {% endfor %}
+                    </li> 
                 </ul>
             </div>
         </nav> 
+     
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
