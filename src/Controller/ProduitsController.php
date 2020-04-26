@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Product;
 use App\Repository\ProductRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -12,13 +13,15 @@ class ProduitsController extends AbstractController
     /**
      * @Route("/", name="produits")
      */
-    public function index(ProductRepository $repo)
+    public function index(ProductRepository $repo,CategoryRepository $repos)
     {
         // $repo = $this->getDoctrine()->getRepository(Product::class);
         $products = $repo->findBy(['online' => 1]);
+        $categories= $repos->findAll();
         return $this->render('produits/index.html.twig', [
             'controller_name' => 'ProduitsController',
-            'products' => $products
+            'products' => $products,
+            'categories' => $categories
         ]);
     }
      /**
