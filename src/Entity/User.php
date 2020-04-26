@@ -56,6 +56,11 @@ class User implements UserInterface
      */
     private $activation_token;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $Reset_token;
+
 
     public function getId(): ?int
     {
@@ -112,6 +117,18 @@ class User implements UserInterface
     public function setActivationToken(?string $activation_token): self
     {
         $this->activation_token = $activation_token;
+
+        return $this;
+    }
+
+    public function getResetToken(): ?string
+    {
+        return $this->Reset_token;
+    }
+
+    public function setResetToken(?string $Reset_token): self
+    {
+        $this->Reset_token = $Reset_token;
 
         return $this;
     }

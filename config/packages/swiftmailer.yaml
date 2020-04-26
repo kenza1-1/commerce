@@ -1,3 +1,3 @@
 swiftmailer:
-    url: '%env(MAILER_URL)%'
-    spool: { type: 'memory' }
+    url: '%env(MAILER_URL)%' # variable d'envirennement Mailer_url qui est dans le fichier .env
+    spool: { type: 'memory' } # la facon dans les emails sont mis en file d'attente 

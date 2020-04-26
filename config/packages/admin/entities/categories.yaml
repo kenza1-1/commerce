@@ -1,15 +1,15 @@
 easy_admin:
     entities:
-              Category: 
-                  class: App\Entity\Category
-                  form:
-                      fields:
+              Category:  #Le nom qu'on veur donner a notre entité
+                  class: App\Entity\Category  #On choisi la class qui defini cette entité 
+                  form:  # differents information pour le formalaire 
+                      fields: # on change les champs (on met que le champs nom de l'entité)
                             - {property: 'name'}
           
-                  list:
-                      max_results: 6
-                      title: "List of %%entity_label%%"
-                      actions:
+                  list: #Affichage de list 
+                      max_results: 6 #Afficher 6 categories au max 
+                      title: "List of %%entity_label%%" # tittre qui porte le meme nom que l'entité 
+                      actions: #C hangement des icons de du suppression et de modification des categories 
                         - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-info'}
                         - {name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
                                 

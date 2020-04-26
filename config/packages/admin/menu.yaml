@@ -1,11 +1,11 @@
 easy_admin:
   design:
-        brand_color: '#3498db'
+        brand_color: '#3498db' # changer la couleur par defaut 
         menu:
             - label: 'Store'
-              icon: 'store'
+              icon: 'store' # utilisation de font awesome pour les icons 
               css_class: 'btn  btn-primary font-weight-bold text-white '
-              children:
-                  - {entity: 'Product', icon: 'tshirt', label: 'Products',css_class: 'font-weight-bold'}
-                  - {entity: 'Category', icon: 'inbox', label: 'Categories',css_class: ' font-weight-bold '}
-                  - {entity: 'User', icon: 'users', label: 'User',css_class: ' font-weight-bold '}
+              children: # enfants:les sous elements
+                  - {entity: 'Product', icon: 'tshirt', label: 'Products',css_class: 'font-weight-bold'} # la partie qui permet de gerer l'entité produit
+                  - {entity: 'Category', icon: 'inbox', label: 'Categories',css_class: ' font-weight-bold '} # la partie qui permet de gerer l'entité categorie
+                  - {entity: 'User', icon: 'users', label: 'User',css_class: ' font-weight-bold '} # la partie qui permet de gerer l'entité utilisateur

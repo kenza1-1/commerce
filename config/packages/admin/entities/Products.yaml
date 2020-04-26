@@ -1,16 +1,16 @@
 easy_admin:
     entities:
 
-            Product:
-                class: App\Entity\Product
-                list:
-                  max_results: 6
-                  title: " List of %%entity_label%%"
+            Product: #Le nom qu'on veur donner a notre entité 
+                class: App\Entity\Product #On choisi la class qui defini cette entité 
+                list: # differents information pour le listing 
+                  max_results: 6 # Affichage de 6 produits max 
+                  title: " List of %%entity_label%%" # Le titre qui prend le nom de l'entité
                   actions:
-                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-info'}
-                    - {name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' }
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-info'} # Mettre une icon d(pen) lors de la
+                    - {name: 'delete', icon: 'trash-alt', label: false, css_class: 'btn btn-danger' } #Mettre une icon (poubelle) lors de la suppression de l'article
                   
-                  fields:
+                  fields: #Ajout des propriétés 
                     - {property: 'title'}
                     - {property: 'online', type: 'toggle'}
                     - { property: 'picture', type: 'image' }
@@ -18,11 +18,4 @@ easy_admin:
                     - {property: 'price'}
                     - { property: 'category' }
 
-                # show:
-                #   fields:
-                #     - {property: 'title'}
-                #     - {property: 'online', type: 'toggle'}
-                #     - { property: 'picture', type: 'image',base_path: '%%uploads_path%%' }
-                #     - {property: 'description',type: 'raw'}
-                #     - {property: 'price'}
-                #     - { property: 'category' }
+             
