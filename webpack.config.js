@@ -1,4 +1,6 @@
 var Encore = require('@symfony/webpack-encore');
+var CopyWebpackPlugin = require('copy-webpack-plugin'); // this line tell to webpack to use the plugin
+
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -57,6 +59,9 @@ Encore
         // polling is useful when running Encore inside a Virtual Machine
         watchOptions.poll = 250;
     })
+    .addPlugin(new CopyWebpackPlugin([
+        { from: './assets/images', to: 'images' }
+    ]))
 
     // enables Sass/SCSS support
     //.enableSassLoader()

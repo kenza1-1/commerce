@@ -159,7 +159,8 @@ class SecurityController extends AbstractController
    /**
      * @Route("/modifier/{token}", name="resetPassWord")
      */
-    public function resetPassWord($token,Request $request,UserPasswordEncoderInterface $encoder, UserRepository $repo,EntityManagerInterface $manager){ //La methode qui va nous rénitialisé le mot de passe
+    //La methode qui va nous rénitialisé le mot de passe
+    public function resetPassWord($token,Request $request,UserPasswordEncoderInterface $encoder, UserRepository $repo,EntityManagerInterface $manager){ 
          //On vérifie si un utilisateur a ce token 
 
          $user = $repo->findOneBy(['Reset_token' => $token]);

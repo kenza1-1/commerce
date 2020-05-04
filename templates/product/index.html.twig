@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Products{% endblock %}
+
+{% block body %}
+<div class='header'>   
+     {# <img class="card-img img-fluid" src="{{asset('build/images/bike.jpg')}}"  alt="Card image"> #}
+    <div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel">
+        <div class="carousel-inner pt-0  carousel-image ">
+
+            <div class="carousel-item active img margine img">
+                <img src="{{asset('build/images/velo1.png')}}" class="d-block w-100" alt="">
+            </div>
+
+            <div class="carousel-item pt-0 img margine img">
+                    <img src="{{asset('build/images/velo2.jpg')}}" class="d-block w-100" alt="...">
+            </div>
+
+            <div class="carousel-item pt-0 img margine img">
+                    <img src="{{asset('build/images/velo3.png')}}" class="d-block w-100" alt="...">
+            </div>
+            
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- /.carousel-inner -->
+    </div>
+    <!-- /.carousel -->
+    
+    <div class='top-products'>
+        {{ render(controller("App\\Controller\\CategoryController::index")) }}
+    </div>       
+        
+</div>
+    <!-- /.header -->
+
+<div class="container container-products">
+    <div class="row">
+        <div class="row  my-5">
+            {% for product in products %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="h-100">
+                    <a href="{{ path('products_show', {'id' : product.id}) }}"><img class="card-img-top pb-0 pt-0 " src="{{product.picture}}" width="150" height="200" alt=""></a>
+                    <div class="card-body pt-0">
+                        <h4 class="card-title mb-0 mt-0 pt-4">
+                        <a href="#">{{product.title}}</a>
+                        </h4>
+                        <h5 class="price pt-2">{{product.price}} €</h5>
+                        <p class="card-text mt-0 pt-0 litledescription">{{product.litledescription}}</p>
+                    </div>
+                    {# <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                    </div> #}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- /.row -->
+    </div>
+</div>
+<!-- /.row -->
+
+
+
+{% endblock %}

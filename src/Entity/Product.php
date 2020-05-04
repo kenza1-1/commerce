@@ -46,6 +46,11 @@ class Product
      */
     private $online;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $litledescription;
+
     public function __toString(){
         
         return $this->title;
@@ -124,6 +129,18 @@ class Product
     public function setOnline(bool $online): self
     {
         $this->online = $online;
+
+        return $this;
+    }
+
+    public function getLitledescription(): ?string
+    {
+        return $this->litledescription;
+    }
+
+    public function setLitledescription(string $litledescription): self
+    {
+        $this->litledescription = $litledescription;
 
         return $this;
     }

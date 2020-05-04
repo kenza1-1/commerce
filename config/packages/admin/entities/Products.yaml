@@ -12,6 +12,7 @@ easy_admin:
                   
                   fields: #Ajout des propriétés 
                     - {property: 'title'}
+                    - {property: 'litledescription'}
                     - {property: 'online', type: 'toggle'}
                     - { property: 'picture', type: 'image' }
                     - {property: 'description',type: 'raw'}

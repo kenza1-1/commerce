@@ -8,7 +8,7 @@ use App\Repository\CategoryRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class ProduitsController extends AbstractController
+class ProductController extends AbstractController
 {
     /**
      * @Route("/", name="produits")
@@ -17,13 +17,13 @@ class ProduitsController extends AbstractController
     {
         // $repo = $this->getDoctrine()->getRepository(Product::class);
         $products = $repo->findBy(['online' => 1]);
-        $categories= $repos->findAll();
-        return $this->render('produits/index.html.twig', [
-            'controller_name' => 'ProduitsController',
+        return $this->render('product/index.html.twig', [
             'products' => $products,
-            'categories' => $categories
         ]);
     }
+    
+  
+
      /**
      * @Route("/Produit/{id}", name="products_show")  //dans une route qui est /quelque chose(ceqlq chose c'est un identifiant)
      */
@@ -32,7 +32,6 @@ class ProduitsController extends AbstractController
     {
         $product = $repo->find($id);
         return $this->render('show/index.html.twig', [
-            'controller_name' => 'ProduitsController',
             'product' => $product 
         ]);
     }
