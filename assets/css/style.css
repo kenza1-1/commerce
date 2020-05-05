@@ -12,6 +12,15 @@ body {
 .nav-top{
 height:100px;
 }
+.price{
+  color: #B12704;
+}
+.product-info{
+  padding-top: 12vh;
+}
+.send-btn{
+  padding-top: 50px;
+}
 .container-products{
 padding-bottom: 12vh;}
 .hover{
