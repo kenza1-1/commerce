@@ -6,15 +6,15 @@
     <div class="row">
 
       <div class="col-lg-7 ">
-            <div id="carouselExampleIndicators" class="carousel slide slide-carousel" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{product.picture}}" alt="First slide">
+                    <div class="carousel-item active slide-carousel">
+                    <img class="d-block w-100 img-fluid" src="{{product.picture}}" alt="First slide">
                     </div>
                     {# <div class="carousel-item">
                     <img class="d-block w-100" src="..." alt="Second slide">
@@ -40,8 +40,8 @@
             <div class="card mt-4 product-info ">
                 <div class="card-body">
                     <h3 class="card-title">{{product.title}}</h3>
-                    <h4>Prix: <span class="price">{{product.price}}  €</span></h4>
-                    <p class="card-text">{{product.litledescription}}
+                    <h4>Prix: <span class="price">{{product.formattedprice}}  €</span></h4>
+                    {# <p class="card-text">{{product.litledescription}} #}
                 </div>
             </div>
             <!-- /.card -->

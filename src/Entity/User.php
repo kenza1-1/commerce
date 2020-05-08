@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Entity;
-use Doctrine\ORM\Mapping as ORM;
+use Serializable;
 
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -14,7 +15,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * message="L'email que vous avez indiqué est déja utilisé."
  * )
  */
-class User implements UserInterface
+class User implements UserInterface 
 {
     /**
      * @ORM\Id()
@@ -104,9 +105,37 @@ class User implements UserInterface
     }
 
     public function eraseCredentials(){ }
-    public function getSalt(){ }
+
+    //  /** @see \Serializable::serialize() */
+    //  public function serialize()
+    //  {
+    //      return serialize(array(
+    //          $this->id,
+    //          $this->username,
+    //          $this->password,
+    //          // see section on salt below
+    //          // $this->salt,
+    //      ));
+    //  }
+     
+    //    /** @see \Serializable::unserialize() */
+    // public function unserialize($serialized)
+    // {
+    //     list (
+    //         $this->id,
+    //         $this->username,
+    //         $this->password,
+    //         // see section on salt below
+    //         // $this->salt
+    //     ) = unserialize($serialized, array('allowed_classes' => false));
+    // }
+
+    public function getSalt(){ 
+        return null;
+    }
+   
     public function getRoles(){
-        return ['Roles_USER'];
+        return ['ROLE_USER'];
     }
 
     public function getActivationToken(): ?string
@@ -129,6 +158,15 @@ class User implements UserInterface
     public function setResetToken(?string $Reset_token): self
     {
         $this->Reset_token = $Reset_token;
+
+        return $this;
+    }
+
+    public function addRoles(string $roles): self
+    {
+        if (!in_array($roles, $this->roles)) {
+            $this->roles[] = $roles;
+        }
 
         return $this;
     }

@@ -3,6 +3,11 @@ easy_admin:
 
             Product: #Le nom qu'on veur donner a notre entité 
                 class: App\Entity\Product #On choisi la class qui defini cette entité 
+                 form:  # differents information pour le formalaire 
+                      fields: # on change les champs (on met que le champs nom de l'entité)
+                            - {property: 'title'}
+                            
+
                 list: # differents information pour le listing 
                   max_results: 6 # Affichage de 6 produits max 
                   title: " List of %%entity_label%%" # Le titre qui prend le nom de l'entité
@@ -14,9 +19,10 @@ easy_admin:
                     - {property: 'title'}
                     - {property: 'litledescription'}
                     - {property: 'online', type: 'toggle'}
-                    - { property: 'picture', type: 'image' }
+                    # - {property: 'imageFile', type: 'file'}
+                    - {property: 'picture', type: 'image' }
                     - {property: 'description',type: 'raw'}
                     - {property: 'price'}
-                    - { property: 'category' }
+                    - {property: 'category' }
 
              

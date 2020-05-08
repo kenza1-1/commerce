@@ -13,6 +13,7 @@ easy_admin:
                   fields:
                    - {property: 'username'}
                    - {property: 'email'}
+                  #  - {property: 'roles'}
                    - {property: 'password'}
                    - {property: 'activation_token'}
                    - {property: 'reset_token'}

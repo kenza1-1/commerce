@@ -35,7 +35,7 @@
     </div>
     <!-- /.carousel -->
     
-    <div class='top-products'>
+    <div class='top-products p-0'>
         {{ render(controller("App\\Controller\\CategoryController::index")) }}
     </div>       
         
@@ -46,14 +46,14 @@
     <div class="row">
         <div class="row  my-5">
             {% for product in products %}
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="h-100">
-                    <a href="{{ path('products_show', {'id' : product.id}) }}"><img class="card-img-top pb-0 pt-0 " src="{{product.picture}}" width="150" height="200" alt=""></a>
+            <div class="col-lg-4 col-md-6 mb-4 ">
+                <div class="h-100 div-product">
+                    <a href="{{ path('products_show', {'id' : product.id}) }}"><img class="card-img-top pb-0" src="{{product.picture}}" width="150" height="200" alt=""></a>
                     <div class="card-body pt-0">
                         <h4 class="card-title mb-0 mt-0 pt-4">
                         <a href="#">{{product.title}}</a>
                         </h4>
-                        <h5 class="price pt-2">{{product.price}} €</h5>
+                        <h5 class="price pt-2">{{product.formattedprice}} €</h5>
                         <p class="card-text mt-0 pt-0 litledescription">{{product.litledescription}}</p>
                     </div>
                     {# <div class="card-footer">
