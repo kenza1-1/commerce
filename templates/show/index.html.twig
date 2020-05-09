@@ -12,7 +12,7 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner inner-carousel">
                     <div class="carousel-item active slide-carousel">
                     <img class="d-block w-100 img-fluid" src="{{product.picture}}" alt="First slide">
                     </div>
@@ -37,13 +37,13 @@
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-5">
-            <div class="card mt-4 product-info ">
-                <div class="card-body">
-                    <h3 class="card-title">{{product.title}}</h3>
+            {# <div class="card mt-4 product-info "> #}
+                {# <div class="card-body"> #}
+                    <h3 class="card-title product-info">{{product.title}}</h3>
                     <h4>Prix: <span class="price">{{product.formattedprice}}  €</span></h4>
                     {# <p class="card-text">{{product.litledescription}} #}
-                </div>
-            </div>
+                {# </div> #}
+            {# </div> #}
             <!-- /.card -->
 
             <div class="card card-outline-secondary my-4">
