@@ -3,21 +3,39 @@
 {% block title %}Products{% endblock %}
 
 {% block body %}
-<div class='header'>   
+{# <div class='header'>    #}
      {# <img class="card-img img-fluid" src="{{asset('build/images/bike.jpg')}}"  alt="Card image"> #}
-    <div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade banniere" data-ride="carousel">
         <div class="carousel-inner pt-0  carousel-image ">
 
             <div class="carousel-item active img margine img">
                 <img src="{{asset('build/images/velo1.png')}}" class="d-block w-100" alt="">
+                     <div class="carousel-caption text-carousel">
+                       <h1 class="font-weight-bold "><span class='nearMyname'>Au cœur du quartier de Neudorf, </span><span class='myname'>notre équipe</span><br>
+            <span class='nearMyname'>est à votre service</span></p></h1>
+                        <hr class="divider my-3">
+                        <a href="#all-products" class="btn btn-link btn-xl js-scroll-trigger example_e"><span class="text-btn">Voir tout les vélos</span></a>
+                    </div>
             </div>
 
             <div class="carousel-item pt-0 img margine img">
                     <img src="{{asset('build/images/velo2.jpg')}}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption text-carousel">
+                      <h1 class="font-weight-bold "><span class='nearMyname'>Au cœur du quartier de Neudorf, </span><span class='myname'>notre équipe</span><br>
+            <span class='nearMyname'>est à votre service</span></p></h1>
+                        <hr class="divider my-3">
+                        <a href="#all-products" class="btn btn-link btn-xl js-scroll-trigger example_e"><span class="text-btn">Voir tout les vélos</span></a>
+                    </div>
             </div>
 
             <div class="carousel-item pt-0 img margine img">
                     <img src="{{asset('build/images/velo3.png')}}" class="d-block w-100" alt="...">
+                      <div class="carousel-caption text-carousel">
+                       <h1 class="font-weight-bold "><span class='nearMyname'>Au cœur du quartier de Neudorf, </span><span class='myname'>notre équipe</span><br>
+            <span class='nearMyname'>est à votre service</span></p></h1>
+                        <hr class="divider my-3">
+                        <a href="#all-products" class="btn btn-link btn-xl js-scroll-trigger example_e"><span class="text-btn">Voir tout les vélos</span></a>
+                    </div>
             </div>
             
             </div>
@@ -35,11 +53,11 @@
     </div>
     <!-- /.carousel -->
     
-    <div class='top-products p-0'>
+    <div class='top-products p-0 ' id="all-products">
         {{ render(controller("App\\Controller\\CategoryController::index")) }}
     </div>       
         
-</div>
+{# </div> #}
     <!-- /.header -->
 
 <div class="container container-products">
