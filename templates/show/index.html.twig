@@ -57,7 +57,7 @@
                     <hr>
                     {# <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
                     <hr> #}
-                   <div class="send-btn"><a href="#" class="btn btn-success "><span style="font-size: 28px; color: #ffff;"><i class="fas fa-envelope pr-4 mt-2"></i></span> Envoyer un message au vendeur</a>
+                   <div class="send-btn"><a href="{{ path('contact', {'id':product.id,'title' : product.title,'price':product.formattedprice,'image':product.picture,'description':product.description}) }}" class="btn btn-success "><span style="font-size: 28px; color: #ffff;"><i class="fas fa-envelope pr-4 mt-2"></i></span> Envoyer un message au vendeur</a>
                     
                    </div> 
                 </div>
