@@ -6,9 +6,13 @@ body {
     /* background-color: #f1f2f6; */
     /* margin-top: 10px; */
 }
-.header{
-    /* height: 50vh; */
+.show-top{
+  padding-top: 80px;
+  padding-bottom: 70px;
+  /* padding-left:20px; */
 }
+
+
 .nav-category{
   color: #ffffff;
   text-decoration: none;
@@ -33,18 +37,23 @@ padding-top: 10vh;
 padding-bottom: 12vh;}
 .hover{
 color: white;
+font-size: 1em;
 }
-.espace-img{
-  width: 12.8vh;
-  /* height: 100PX; */
-  /* width: 10%; */
+.container-show{
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
 
-}
-.slide-carousel{
-  width: 80%;
+/* Imgae logo css  */
+.espace-img{
+  /* width: 12.8vh; */
+  height: 100px;
+  /* width: 100%; */
+  /* width: 10%; */
 }
 .img-logo{
   width: 100%;
+  height: 100%;
 }
 /* -------css footer--------  */
 #main-footer {
@@ -206,14 +215,13 @@ footer .footer-links {
     font-family: Helvetica, sans-serif;
     font-weight: bold;
 }
-
 .nav-effect :hover{
     /* text-decoration: underline; */
     text-decoration: none;
     /* color: #5e5e5e; */
     /* color: #91544d; */
 }
-.nav-acscom{
+.nav-sitename{
     font-family:Brush Script MT, Brush Script Std, cursive;
     font-size: xx-large;
 }
@@ -826,6 +834,13 @@ input {
 
 
 /* CSS Contact US  ///////////////////////////////////////////////////////////////////////////////////////////////////*/
+.btn-text{
+  color: rgb(61, 58, 58);
+}
+.contact-top{
+  padding-top: 50px;
+  margin-top: 50px;
+}
 #contatti{
   background-color: #70c3be;
   letter-spacing: 2px;
@@ -834,7 +849,9 @@ input {
   color: #fff;
   text-decoration: none;
 }
-
+#contatti .maps{
+  padding-top: 50px;
+}
 
 @media (max-width: 575.98px) {
 

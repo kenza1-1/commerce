@@ -32,44 +32,11 @@ class ContactController extends AbstractController
                        'object' => $contactFormData['object'],
                        'message' => $contactFormData['message'],
                        'title' => $request->query->get('title'),
-                        'price' => $request->query->get('price'),
-                        'image' => $request->query->get('image'),
-                        'description' =>$request->query->get('description')
-
-
-
-
-
-
+                       'price' => $request->query->get('price'),
+                       'image' => $request->query->get('image'),
+                       'description' =>$request->query->get('description')
                         ]),
                 'text/html'
-                   
-            //     '<html>' .
-            //     ' <body>' .      
-            //     'Une personne souhaiterais obtenir plus d\'information sur un vélo :'. 
-            //     {{absolute_url(path('products_show',{'id' : $id}) ) }} .
-            //     'Message reçu de :'.
-            //     $contactFormData['name'].
-            //     '<br>'.
-            //     '. Adresse mail est :'.
-            //    $contactFormData['email'].
-            //    '<br>'.
-            //    'Objet :'.
-            //    $contactFormData['object'].
-            //    '<br>'.
-            //    'Message :'.
-            //    $contactFormData['message'].
-            //    'le titre :'.
-            //    $title.
-            //    '<br>'.
-            //    'prix :'.
-            //    $price.
-            //    '<br>'.
-            //    $image.
-
-            //     ' </body>' .
-            //     '</html>',
-            //        'text/html'
              )
                 ;
                 // on envoie le email

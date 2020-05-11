@@ -13,15 +13,15 @@
     <body>
      <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-fixed p-0 nav-top">
-      <div class="espace-img"><img class="card-img img-fluid img-logo" src="{{asset('build/images/logo.png')}}"  alt="Card image"></div>  
-            <a class="navbar-brand nav-acscom" href="#"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="espace-img"><img class="card-img img-fluid img-logo" src="{{asset('build/images/logotop.png')}}"  alt="Card image"></div>  
+            <a class="navbar-brand nav-sitename pl-4"  href="{{path('products')}}">Velo Strass</a>
+            {# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                  <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> #}
             <div class="collapse navbar-collapse navbarback" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item nav-effect active pl-5 ">
-                        <a class="nav-link" href="{{ path('produits')}}"><span class="hover">Accueil</span><span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ path('products')}}"><span class="hover">Accueil</span><span class="sr-only">(current)</span></a>
                     </li>
                     {% if not app.user %}
                      <li class="nav-item nav-effect active pl-5">
@@ -61,7 +61,7 @@
                         <div class="container">
                                 <div class="col s12 m12 l12 center-align">
                                         <img src="{{asset('build/images/logo.png')}}" width="100" alt="image-logo">
-                                        <h2 class="pt-3">Company Name</h2>
+                                        <h2 class="pt-3 nav-sitename">Velo Strass</h2>
                                         <p class="pt-3">Description du site : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione eum qui mollitia praesentium sit nihil nostrum.</p>
                                         <div class="icons pt-4 ">
                                                 <a href="https://www.facebook.com/profile.php?id=100009352598699" target="_blank">
