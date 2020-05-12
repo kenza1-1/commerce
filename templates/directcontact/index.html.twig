@@ -1,10 +1,8 @@
-{# use Symfony\Component\Form\Extension\Core\Type\EmailType; #}
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Hello DirectcontactController!{% endblock %}
 
 {% block body %}
-
 <div class="row" id="contatti">
  <div class="container contact-top" >
     <div class="row" style="height:700px;">
@@ -12,16 +10,17 @@
          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10560.460440665765!2d7.7432005387599165!3d48.56934406816202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796c9a89c8ae887%3A0xf540902bf72ff10a!2sNeudorf%20Ouest%2C%2067100%20Strasbourg!5e0!3m2!1sen!2sfr!4v1588936310140!5m2!1sen!2sfr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
       <div class="col-md-6 col-sm-12 pt-5 ">
-
-     {% for message in app.flashes('message') %}
+       {% for message in app.flashes('message') %}
         <div class="alert alert-success mb-2" id="msg">
           {{ message }}
         </div>  
     	{% endfor %}
-        <h2 class="mt-3 font-weight-bold text-white m-0 ">Contacter le vendeur pour plus d'informations sur ce vélo :</h2>
-        <div class="img-contact"><img src="{{product.picture}}" y class="w-100" alt=""></div>
-
-        {# <p>{{product.title}}</p> #}
+            <h2 class="text-uppercase mt-3 font-weight-bold text-white pb-5">Pour plus d'informations contactez le vendeur</h2>
+     {% for message in app.flashes('message') %}
+        <div class="alert alert-success mb-5" id="msg">
+          {{ message }}
+        </div>  
+    	{% endfor %}
         {{ form_start(form) }}
         <form  method="POST">
           <div class="row">
