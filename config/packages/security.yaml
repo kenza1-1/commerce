@@ -1,7 +1,7 @@
 security:
-    encoders:
+    encoders: 
         App\Entity\User:
-            algorithm: bcrypt
+            algorithm: bcrypt  
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers: # permettent de dire comment fournir les données utilisateurs    
         users_in_memory: { memory: null }
@@ -24,7 +24,7 @@ security:
 
             logout:
                 path: security_logout
-                target: produits
+                target: products
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -35,6 +35,6 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
         

@@ -34,7 +34,11 @@ class User implements UserInterface
      * @Assert\Regex("/^\w+/")
      */
     public $username;
-
+    
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -134,9 +138,9 @@ class User implements UserInterface
         return null;
     }
    
-    public function getRoles(){
-        return ['ROLE_USER'];
-    }
+    // public function getRoles(){
+    //     return ['ROLE_USER'];
+    // }
 
     public function getActivationToken(): ?string
     {
@@ -162,13 +166,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function addRoles(string $roles): self
+    public function getRoles(): array
     {
-        if (!in_array($roles, $this->roles)) {
-            $this->roles[] = $roles;
-        }
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
 
-        return $this;
+        return array_unique($roles);
     }
-
 }

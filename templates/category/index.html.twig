@@ -3,11 +3,11 @@
 {% block body %}
 
     {% for category in categories %}
-        
         <li class="nav-item nav-effect active pl-5 pt-2 nav-category">
-        <a href=" {{ path('category_products', {'category' : category.id}) }}" type="button" class="btn btn-light btn-category"><span class="nav-category">{{category.name}}</span></a>
-
-       
+            {#Afficher les produits selon leur catégories de la categrory#}
+            <a href=" {{ path('category_products', {'category' : category.id}) }}" type="button" class="btn btn-light btn-category">
+            <span class="nav-category">{{category.name}}</span></a> {#Afficher le nom de la catégorie#}
         </li>
     {% endfor %}
+    
 {% endblock %}
